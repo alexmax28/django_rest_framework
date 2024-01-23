@@ -29,6 +29,7 @@ schema_view = get_swagger_view(title='API')
 
 router = DefaultRouter()
 router.register('product', views.ProductViewSet)
+router.register('user', views.UserViewSet, basename='User')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
