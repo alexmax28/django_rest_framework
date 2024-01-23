@@ -30,6 +30,7 @@ class UserViewSet(viewsets.ModelViewSet):
     # permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
+        # 抓取參數
         keyword = self.request.query_params.get('username', None)
         if keyword is not None:
             queryset = User.objects.filter(user_name=keyword)
